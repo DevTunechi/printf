@@ -1,0 +1,143 @@
+#include <unistd.h>
+
+#define BUFF_SIZE 256
+#define F_MINUS 0x01
+
+/**
+ * handle_zero_padding - Handles zero padding in the buffer.
+ * @ind: Starting index in the buffer.
+ * @buffer: Character buffer.
+ * @length: Length of the content in the buffer.
+ * @width: Minimum width of the output.
+ * @padd: Padding character.
+ */
+static void handle_zero_padding(int ind, char buffer[], int length, int width, char padd);
+
+/**
+ * handle_width - Handles the width formatting of the buffer.
+ * @ind: Starting index in the buffer.
+ * @buffer: Character buffer.
+ * @length: Length of the content in the buffer.
+ * @width: Minimum width of the output.
+ * @padd: Padding character.
+ * @flags: Formatting flags.
+ */
+static void handle_width(int ind, char buffer[], int length, int width, char padd, int flags);
+
+/**
+ * handle_extra_char - Handles the inclusion of an extra character in the buffer.
+ * @ind: Starting index in the buffer.
+ * @buffer: Character buffer.
+ * @length: Length of the content in the buffer.
+ * @extra_c: Extra character to be included.
+ */
+static void handle_extra_char(int ind, char buffer[], int length, char extra_c);
+
+/**
+ * write_num - Writes a formatted number to the standard output.
+ * @ind: Starting index in the buffer.
+ * @buffer: Character buffer to write to.
+ * @flags: Formatting flags.
+ * @width: Minimum width of the output.
+ * @prec: Precision for numeric output.
+ * @length: Length of the numeric content.
+ * @padd: Padding character.
+ * @extra_c: Extra character to be included in the output.
+ * @return: The number of characters written.
+ */
+int write_num(int ind, char buffer[], int flags, int width, int prec, int length, char padd, char extra_c)
+{
+    if (prec == 0 && ind == BUFF_SIZE - 2 && buffer[ind] == '0' && width == 0)
+        return 0;
+
+    if (prec == 0 && ind == BUFF_SIZE - 2 && buffer[ind] == '0')
+    {
+        buffer[ind] = padd = ' ';
+    }
+
+    if (prec > 0 && prec < length)
+        padd = ' ';
+
+    while (prec > length)
+    {
+        buffer[--ind] = '0';
+        length++;
+    }
+
+    handle_extra_char(ind, buffer, length, extra_c);
+    handle_width(ind, buffer, length, width, padd, flags);
+
+    return write(1, &buffer[ind], length);
+}
+
+/**
+ * handle_extra_char - Handles the inclusion of an extra character in the buffer.
+ * @ind: Starting index in the buffer.
+ * @buffer: Character buffer.
+ * @length: Length of the content in the buffer.
+ * @extra_c: Extra character to be included.
+ */
+static void handle_extra_char(int ind, char buffer[], int length, char extra_c)
+{
+    if (extra_c != 0)
+    {
+        length++;
+        buffer[--ind] = extra_c;
+    }
+}
+
+/**
+ * handle_width - Handles the width formatting of the buffer.
+ * @ind: Starting index in the buffer.
+ * @buffer: Character buffer.
+ * @length: Length of the content in the buffer.
+ * @width: Minimum width of the output.
+ * @padd: Padding character.
+ * @flags: Formatting flags.
+ */
+static void handle_width(int ind, char buffer[], int length, int width, char padd, int flags)
+{
+    if (width > length)
+    {
+        for (int i = 1; i < width - length + 1; i++)
+            buffer[i] = padd;
+
+        buffer[width - length + 1] = '\0';
+
+        if (flags & F_MINUS && padd == ' ')
+        {
+            handle_extra_char(ind, buffer, length, 0);
+            write(1, &buffer[ind], length);
+            write(1, &buffer[1], width - length);
+        }
+        else if (!(flags & F_MINUS) && padd == ' ')
+        {
+            handle_extra_char(ind, buffer, length, 0);
+            write(1, &buffer[1], width - length);
+            write(1, &buffer[ind], length);
+        }
+        else if (!(flags & F_MINUS) && padd == '0')
+        {
+            handle_extra_char(ind, buffer, length, 0);
+            write(1, &buffer[0], width - 1);
+            write(1, &buffer[ind], length - 1);
+        }
+    }
+}
+
+/**
+ * handle_zero_padding - Handles zero padding in the buffer.
+ * @ind: Starting index in the buffer.
+ * @buffer: Character buffer.
+ * @length: Length of the content in the buffer.
+ * @width: Minimum width of the output.
+ * @padd: Padding character.
+ */
+static void handle_zero_padding(int ind, char buffer[], int length, int width, char padd)
+{
+    if (padd == '0')
+    {
+        buffer[--ind] = 0;
+        write(1, &buffer[ind], length);
+    }
+}
