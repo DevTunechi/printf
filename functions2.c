@@ -14,7 +14,6 @@
  * Return: Num of characters printed
  */
 
-
 int print_pointer(va_list types, char buffer[],
 int flags, int width, int precision, int size)
 {
@@ -112,8 +111,6 @@ return (write(1, buffer, i + offset));
  * Return: Number of characters to be printed
  */
 
-
-
 int print_reverse(va_list types, char buffer[],
 int flags, int width, int precision, int size)
 {
@@ -198,5 +195,6 @@ write(1, &x, 1);
 count++;
 }
 }
+
 return (count);
 }
