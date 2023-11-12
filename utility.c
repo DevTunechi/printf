@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * is_printable - Evaluates if a character is printable
+ * is_printable - Evaluate if a character is printable
  * @c: Char to be evaluated
  * Olatunji Oluwadare
  * Return: 1 if c is printable, 0 otherwise
@@ -75,7 +75,7 @@ return ((int)num);
 
 /**
  * convert_size_unsgnd - Casts a number to the specified size
- * @num: Number to be casted
+ * @num: Numbers to be casted
  * @size: Number indicating the type to be casted
  * Goodnews Akpan
  * Return: Casted value of num
