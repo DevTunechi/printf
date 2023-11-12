@@ -7,7 +7,7 @@
  * @c: Character to be printed
  * @buffer: Array for printing
  * Olatunji and Goodnews
- * @flags: Active for formatting
+ * @flags: Activ for formatting
  * @width: Width specification
  * @precision: Precision specifier
  * @size: Specifier
