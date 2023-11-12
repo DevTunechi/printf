@@ -1,11 +1,11 @@
 #include "main.h"
 
-/****************** POINTER PRINTER ******************/
+/****************** PRINT THE VALUE OF A POINTER ******************/
 
 /**
  * print_pointer - Prints the value of a pointer variable
  * @types: Arguments list
- * Olatunji Oluwadare and Goodnews Akpan
+ * Olatunji Oluwadare and Goodnews Akpan (authors)
  * @buffer: Buffer array
  * @flags: Active flags for formatting
  * @width: Width specification
@@ -55,7 +55,7 @@ return (write_pointer(buffer, ind, length,
 width, flags, padd, extra_c, padd_start));
 }
 
-/************************* PRINT NON-PRINTABLE *************************/
+/************************* TO PRINT NON-PRINTABLE CHARACTERS *************************/
 
 /**
  * print_non_printable - Prin ASCII codes in hex format/non-printable char
@@ -98,7 +98,7 @@ buffer[i + offset] = '\0';
 return (write(1, buffer, i + offset));
 }
 
-/************************* PRINT IN REVERSE *************************/
+/************************* PRINT A STRING IN REVERSE *************************/
 
 /**
  * print_reverse - Prints a reversed string
@@ -146,7 +146,7 @@ count++;
 return (count);
 }
 
-/************************* PRINT STRING IN ROT13 *************************/
+/************************* PRINT A STRING ENCODED IN ROT13 *************************/
 
 /**
  * print_rot13string - Prints a string encoded in ROT13

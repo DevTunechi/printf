@@ -1,9 +1,11 @@
 #include "main.h"
 
+/******************* CALCULATE WIDTH TO PRINT ***************/
+
 /**
  * get_width - Calcs width for printing
  * Goodnews and Olatunji
- * @format: Formatted str to print the arguments
+ * @format: Formatted string to print the arguments
  * @i: Arguments to be printed
  * @list: Arguments
  * Return: width.

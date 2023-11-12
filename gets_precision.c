@@ -4,7 +4,7 @@
  * get_precision - Precision for printing
  * Olatunji and Goodnews Akpan
  * @format: Formatted string to print arguments
- * @i: List of arguments printed.
+ * @i: List of arguments to be printed.
  * @list: Arguments list
  * Return: Precision
  */

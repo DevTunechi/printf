@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * is_printable - Evaluates if a char is printable
+ * is_printable - Evaluates if a character is printable
  * @c: Char to be evaluated
  * Olatunji Oluwadare
  * Return: 1 if c is printable, 0 otherwise
@@ -16,7 +16,7 @@ return (0);
 }
 
 /**
- * append_hexa_code - Appends ASCII in hex code to buffer
+ * append_hexa_code - Appends ASCII in hexadecimal code to buffer
  * @buffer: Array of characters
  * @i: Index to start appending
  * @ascii_code: ASCII
@@ -41,7 +41,7 @@ return (4);
 }
 
 /**
- * is_digit - Verifies if a char is a digit
+ * is_digit - Verifies if a character is a digit
  * @c: Char to be evaluated
  * Olatunji Oluwadare
  * Return: 1 if c is a digit, 0 otherwise

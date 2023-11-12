@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * get_flags - Handles and calculates active flags
+ * get_flags - Function to Handle and calculates active flags
  * @format: Formatted string to print arguments
- * @i: Takes a parameter
+ * @i: Variable that takes a parameter
  * Goodnews and Olatunji
  * Return: Flags
  */

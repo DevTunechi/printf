@@ -1,6 +1,6 @@
 #include "main.h"
 
-/************************* PRINT CHAR *************************/
+/************************* PRINT CHARACTER *************************/
 
 /**
  * print_char - Handles printing of a single character
@@ -91,7 +91,7 @@ return (write(1, str, length));
  * @buffer: Buffer array for printing
  * @flags: Active flags for formatting
  * @width: Width specification
- * Olatunji and Goodnews
+ * Olatunji Oluwadare and Goodnews Akpan
  * @precision: Precision specification
  * @size: Size specifier
  * Return: Number of characters printed
