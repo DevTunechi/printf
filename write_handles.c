@@ -1,6 +1,6 @@
 #include "main.h"
 
-/************************* WRITE HANDLE *************************/
+/******************** WRITE HANDLE TO PRINT CHAR ***********************/
 
 /**
  * handle_write_char - Handles printing of a character
@@ -46,7 +46,7 @@ write(1, &buffer[0], 1));
 return (write(1, &buffer[0], 1));
 }
 
-/************************* WRITE NUMBER *************************/
+/***************** WRITE NUMBER TO PRINT STRING ****************/
 
 /**
  * write_number - Prints string
@@ -57,7 +57,7 @@ return (write(1, &buffer[0], 1));
  * @width: get width
  * @precision: Specifier
  * @size: Specifier
- * Tunji and Goodnews
+ * Olatunji and Goodnews
  * Return: Number of chars printed.
  */
 int write_number(int is_negative, int ind, char buffer[],
@@ -81,6 +81,8 @@ return (write_num(ind, buffer, flags, width, precision,
 length, padd, extra_ch));
 }
 
+/******************** WRITE NUMBER USING BUFFER **************/
+
 /**
  * write_num - A number using bufffer
  * @ind: Index
@@ -90,7 +92,7 @@ length, padd, extra_ch));
  * @prec: Precision specifier
  * @length: Number length
  * @padd: Pading char
- * Ola and TG
+ * Olatunji and Goodnews
  * @extra_c: Extra char
  * Return: Num of printed chars.
  */
@@ -102,7 +104,6 @@ int length, char padd, char extra_c)
 int i, padd_start = 1;
 
 if (prec == 0 && ind == BUFF_SIZE - 2 && buffer[ind] == '0' && width == 0)
-
 return (0);
 
 if (prec == 0 && ind == BUFF_SIZE - 2 && buffer[ind] == '0')
@@ -144,13 +145,15 @@ buffer[--ind] = extra_c;
 return (write(1, &buffer[ind], length));
 }
 
+/******************* WRITE UNSIGNED NUMBER *******************/
+
 /**
  * write_unsgnd - Writes unsigned number
  * @is_negative: Indicating if num is negative
  * @ind: Index at which the number starts in the buffer
  * @buffer: Array of chars
  * @flags: Specifiers
- * Olat and Goodnews
+ * Olatunji and Goodnews (authors)
  * @width: Width specifier
  * @precision: Precision specifier
  * @size: Specifier
@@ -199,9 +202,10 @@ else
 return (write(1, &buffer[0], i) + write(1, &buffer[ind], length));
 }
 }
-
 return (write(1, &buffer[ind], length));
 }
+
+/************************ WRITE POINTER *********************/
 
 /**
  * write_pointer - Writes memory address to buffer
@@ -217,7 +221,6 @@ return (write(1, &buffer[ind], length));
  * Return: Number of written chars
  */
 
-
 int write_pointer(char buffer[], int ind, int length,
 int width, int flags, char padd, char extra_c, int padd_start)
 {
@@ -228,7 +231,6 @@ if (width > length)
 for (i = 3; i < width - length + 3; i++)
 buffer[i] = padd;
 buffer[i] = '\0';
-
 if (flags & F_MINUS && padd == ' ')
 {
 buffer[--ind] = 'x';

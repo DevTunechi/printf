@@ -5,7 +5,7 @@ void print_buffer(char buffer[], int *buff_ind);
 /**
  * _printf - Customized printf function
  * @format: Format string
- * Olatunji Oluwadare and Akpan Goodnews
+ * Olatunji Oluwadare and Goodnews Akpan
  * Return: Number of characters printed
  */
 

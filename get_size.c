@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * get_size - Calc size to cast the argument
+ * get_size - Calculate size to cast the argument
  * @format: Formatted string in which to print the arguments
  * @i: Arguments to be printed
- * Olatunji Oluwadare
+ * Olatunji Oluwadare and Goodnews Akpan (authors)
  * Return: Precision
  */
 
@@ -22,6 +22,5 @@ if (size == 0)
 *i = curr_i - 1;
 else
 *i = curr_i;
-
 return (size);
 }

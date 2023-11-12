@@ -1,11 +1,11 @@
 #include "main.h"
 
-/****************** POINTER PRINTER ******************/
+/****************** PRINT THE VALUE OF A POINTER ******************/
 
 /**
  * print_pointer - Prints the value of a pointer variable
  * @types: Arguments list
- * Olatunji Oluwadare and Goodnews Akpan
+ * Olatunji Oluwadare and Goodnews Akpan (authors)
  * @buffer: Buffer array
  * @flags: Active flags for formatting
  * @width: Width specification
@@ -13,7 +13,6 @@
  * @size: Specifier
  * Return: Num of characters printed
  */
-
 
 int print_pointer(va_list types, char buffer[],
 int flags, int width, int precision, int size)
@@ -55,7 +54,7 @@ return (write_pointer(buffer, ind, length,
 width, flags, padd, extra_c, padd_start));
 }
 
-/************************* PRINT NON-PRINTABLE *************************/
+/************************* TO PRINT NON-PRINTABLE CHARACTERS *************************/
 
 /**
  * print_non_printable - Prin ASCII codes in hex format/non-printable char
@@ -98,7 +97,7 @@ buffer[i + offset] = '\0';
 return (write(1, buffer, i + offset));
 }
 
-/************************* PRINT IN REVERSE *************************/
+/************************* PRINT A STRING IN REVERSE *************************/
 
 /**
  * print_reverse - Prints a reversed string
@@ -111,8 +110,6 @@ return (write(1, buffer, i + offset));
  * @size: Specifier
  * Return: Number of characters to be printed
  */
-
-
 
 int print_reverse(va_list types, char buffer[],
 int flags, int width, int precision, int size)
@@ -146,7 +143,7 @@ count++;
 return (count);
 }
 
-/************************* PRINT STRING IN ROT13 *************************/
+/************************* PRINT A STRING ENCODED IN ROT13 *************************/
 
 /**
  * print_rot13string - Prints a string encoded in ROT13
@@ -198,5 +195,6 @@ write(1, &x, 1);
 count++;
 }
 }
+
 return (count);
 }

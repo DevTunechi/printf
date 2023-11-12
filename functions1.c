@@ -1,6 +1,6 @@
 #include "main.h"
 
-/************************* PRINT UNSIGNED NUMBER ************************/
+/************************* PRINT UNSIGNED NUMBER WITH GIVEN ARGUMENTS ************************/
 /**
  * print_unsigned - Printing of unsigned number with given arguments
  * @types: List of arguments
@@ -9,10 +9,9 @@
  * @width: Width specification
  * @precision: Precision specification
  * @size: Size specifier
- * Olatunji Oluwadare and Goodnews Akpan
+ * Olatunji Oluwadare and Goodnews Akpan (authors)
  * Return: Number of characters printed
  */
-
 
 int print_unsigned(va_list types, char buffer[],
 int flags, int width, int precision, int size)
@@ -26,7 +25,6 @@ if (num == 0)
 buffer[i--] = '0';
 
 buffer[BUFF_SIZE - 1] = '\0';
-
 while (num > 0)
 {
 buffer[i--] = (num % 10) + '0';
@@ -38,7 +36,7 @@ i++;
 return (write_unsgnd(0, i, buffer, flags, width, precision, size));
 }
 
-/************* PRINT UNSIGNED NUMBER IN OCTAL  ****************/
+/************* FUNCTION TO PRINT UNSIGNED NUMBER IN OCTAL  ****************/
 
 /**
  * print_octal - Handles printing unsigned num in octal notation
@@ -83,7 +81,7 @@ i++;
 return (write_unsgnd(0, i, buffer, flags, width, precision, size));
 }
 
-/************** PRINT UNSIGNED NUMBER IN HEXADECIMAL **************/
+/************** FUNCTION TO PRINT UNSIGNED NUMBER IN HEXADECIMAL **************/
 
 /**
  * print_hexadecimal - printing unsigned number in hexadecimal notation
@@ -104,7 +102,7 @@ return (print_hexa(types, "0123456789abcdef", buffer,
 flags, 'x', width, precision, size));
 }
 
-/************* PRINT UNSIGNED NUMBER IN UPPER HEXADECIMAL **************/
+/************* FUNCTION TO PRINT UNSIGNED NUMBER IN UPPER HEXADECIMAL **************/
 /**
  * print_hexa_upper - prints an unsigned num in uppercase hexadecimal notation
  * @types: Arguments list
@@ -124,7 +122,7 @@ return (print_hexa(types, "0123456789ABCDEF", buffer,
 flags, 'X', width, precision, size));
 }
 
-/************** PRINT HEXX NUM IN LOWER OR UPPER **************/
+/************** PRINT HEXADECIMAL NUMBERS IN LOWER OR UPPER CASE **************/
 
 /**
  * print_hexa - Prints hexadecimal num in lower || uppercase

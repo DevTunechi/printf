@@ -1,16 +1,15 @@
 #include "main.h"
 
 /**
- * get_flags - Handles and calculates active flags
+ * get_flags - Function to Handle and calculates active flags
  * @format: Formatted string to print arguments
- * @i: Takes a parameter
+ * @i: Variable that takes a parameter
  * Goodnews and Olatunji
  * Return: Flags
  */
 
 int get_flags(const char *format, int *i)
 {
-
 
 int j, curr_i;
 int flags = 0;
@@ -29,8 +28,6 @@ break;
 if (FLAGS_CH[j] == 0)
 break;
 }
-
 *i = curr_i - 1;
-
 return (flags);
 }

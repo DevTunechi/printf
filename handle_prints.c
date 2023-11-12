@@ -1,8 +1,9 @@
 #include "main.h"
+
 /**
  * handle_print - Handles printing of an argument based on its type
- * @fmt: Formatted str specifying format of arguments
- * @list: Args to be printed
+ * @fmt: Formatted string specifying format of arguments
+ * @list: Arguments to be printed
  * @ind: Index
  * Olatunji Oluwadare and Goodnews Akpan
  * @buffer: Array for printing
@@ -12,7 +13,6 @@
  * @size: Specifier
  * Return: 1 on success or 2, indicating failure
  */
-
 int handle_print(const char *fmt, int *ind, va_list list, char buffer[],
 int flags, int width, int precision, int size)
 {
