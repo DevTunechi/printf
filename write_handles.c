@@ -1,6 +1,6 @@
 #include "main.h"
 
-/************************* WRITE HANDLE TO PRINT CHARACTER *************************/
+/******************** WRITE HANDLE TO PRINT CHAR ***********************/
 
 /**
  * handle_write_char - Handles printing of a character
@@ -46,7 +46,7 @@ write(1, &buffer[0], 1));
 return (write(1, &buffer[0], 1));
 }
 
-/************************* WRITE NUMBER TO PRINT STRING *************************/
+/***************** WRITE NUMBER TO PRINT STRING ****************/
 
 /**
  * write_number - Prints string
@@ -104,7 +104,6 @@ int length, char padd, char extra_c)
 int i, padd_start = 1;
 
 if (prec == 0 && ind == BUFF_SIZE - 2 && buffer[ind] == '0' && width == 0)
-
 return (0);
 
 if (prec == 0 && ind == BUFF_SIZE - 2 && buffer[ind] == '0')
@@ -203,7 +202,6 @@ else
 return (write(1, &buffer[0], i) + write(1, &buffer[ind], length));
 }
 }
-
 return (write(1, &buffer[ind], length));
 }
 
@@ -223,7 +221,6 @@ return (write(1, &buffer[ind], length));
  * Return: Number of written chars
  */
 
-
 int write_pointer(char buffer[], int ind, int length,
 int width, int flags, char padd, char extra_c, int padd_start)
 {
@@ -234,7 +231,6 @@ if (width > length)
 for (i = 3; i < width - length + 3; i++)
 buffer[i] = padd;
 buffer[i] = '\0';
-
 if (flags & F_MINUS && padd == ' ')
 {
 buffer[--ind] = 'x';
