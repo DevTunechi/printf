@@ -63,7 +63,6 @@ return (0);
  * Return: Converted value of num
  */
 
-
 long int convert_size_number(long int num, int size)
 {
 if (size == S_LONG)
