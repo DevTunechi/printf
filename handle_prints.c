@@ -13,7 +13,6 @@
  * @size: Specifier
  * Return: 1 on success or 2, indicating failure
  */
-
 int handle_print(const char *fmt, int *ind, va_list list, char buffer[],
 int flags, int width, int precision, int size)
 {
